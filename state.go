@@ -25,6 +25,10 @@ type CipherState struct {
 	invalid bool
 }
 
+func (s *CipherState) Key() [32]byte {
+    return s.k
+}
+
 // Encrypt encrypts the plaintext and then appends the ciphertext and an
 // authentication tag across the ciphertext and optional authenticated data to
 // out. This method automatically increments the nonce after every call, so
